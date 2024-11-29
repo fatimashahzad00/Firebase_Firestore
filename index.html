@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firestore CRUD Example</title>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f7f7f7;
+    }
+    h1 {
+      color: #333;
+      margin-top: 20px;
+    }
+    .form-container, .data-container {
+      width: 90%;
+      max-width: 600px;
+      margin: 20px 0;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .form-container input, .form-container button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .data-container ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .data-container li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin: 5px 0;
+      background: #f9f9f9;
+    }
+    .data-container button {
+      background-color: #ff5c5c;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Firestore CRUD App</h1>
+
+  <!-- Form to Add Data -->
+  <div class="form-container">
+    <form>
+        <h2>Add User</h2>
+        <input type="text" id="userName" placeholder="Enter name" />
+        <input type="number" id="userAge" placeholder="Enter age" />
+        <button id="addUserBtn">Add User</button>
+    </form>
+  </div>
+
+  <!-- Display Data -->
+  <div class="data-container">
+    <h2>Users</h2>
+    <ul id="userList"></ul>
+  </div>
+
+ <script type="module" src="firebaseConfig.js"></script>
+ <script type="module" src="app.js"></script>
+</body>
+</html>
